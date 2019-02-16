@@ -1,0 +1,12 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='../../static_content.html'/>
+<% style_overrides_file = static.get_value('css_overrides_file') %>
+
+% if style_overrides_file:
+<link rel="stylesheet" type="text/css" href="${static.url(style_overrides_file)}" />
+% endif
+
+<!-- Añade bootstrap 4 -->
+% if not uses_bootstrap:
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+% endif
