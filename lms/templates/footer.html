@@ -3,6 +3,7 @@
 <%!
   from django.core.urlresolvers import reverse
   from django.utils.translation import ugettext as _
+  from django.conf import settings
   from branding.api import get_footer
 %>
 <% footer = get_footer(is_secure=is_secure) %>
@@ -11,8 +12,8 @@
 <footer class="theme-footer">
   <div class="theme-footer_holder">
     <div class="theme-footer_section">
-      <span class="theme-footer_text">If you have some questions please contact us</span>
-      <a class="theme-btn theme-btn__contact" href="/contact">Contact us</a>
+      <span class="theme-footer_text">¿Necesitas ayuda?</span>
+      <a class="theme-btn" href="/contact">Contáctanos</a>
     </div>
   </div>
   <div class="theme-footer_holder theme-footer_holder__color">
@@ -20,22 +21,22 @@
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">About the university</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/raccoon-university/" target="_blank">Raccoon Gang University</a>  
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/raccoon-university/">Raccoon Gang University</a>  
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/about-us/" target="_blank">About Us</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/about-us/">About Us</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/#our_services" target="_blank">eDX Services</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/open-edx-services/">eDX Services</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/blog/" target="_blank">Blog</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/blog/">Blog</a>
         </div>
       </div>
       <div class="theme-footer_col">
         <h2 class="theme-footer_col-header">courses</h2>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://studio-marvel-ficus.raccoongang.com/" target="_blank">Create Course Now</a>
+          <a class="theme-footer_col-link" href="https://${settings.CMS_BASE}">Create Course Now</a>
         </div>
       </div>
       <div class="theme-footer_col">
@@ -44,13 +45,13 @@
           <a class="theme-footer_col-link" href="/contact">Contact Us</a>
         </div>
         <div class="theme-footer_col-holder">
-          <a class="theme-footer_col-link" href="https://raccoongang.com/en/contact-us/" target="_blank">Help</a>
+          <a class="theme-footer_col-link" href="https://raccoongang.com/en/contact-us/">Help</a>
         </div>
       </div>
     </div>
     <div class="theme-footer_section">
       <div class="theme-footer_copyright">
-        © 2016 Racoongang. All Rights Reserved
+        © 2019 DocenciaMD. Algunos derecho reservados
         <a href="${footer['openedx_link']['url']}">
           <img src="${footer['openedx_link']['image']}" alt="${footer['openedx_link']['title']}" width="140" />
         </a>
