@@ -7,13 +7,7 @@ from django.urls import reverse
 
 from openedx.core.djangolib.markup import HTML, Text
 %>
-<head>
-  <!-- McDaniel Oct-2018: add the Bootstrap library, unless it's already included from webpack -->
-  % if not uses_bootstrap:
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  % endif
 
-</head>
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
       <header>
