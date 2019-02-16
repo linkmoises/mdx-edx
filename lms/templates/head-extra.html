@@ -1,0 +1,17 @@
+<%page expression_filter="h"/>
+<%namespace name='static' file='../../static_content.html'/>
+<% style_overrides_file = static.get_value('css_overrides_file') %>
+
+% if style_overrides_file:
+  <link rel="stylesheet" type="text/css" href="${static.url(style_overrides_file)}" />
+% endif
+
+## mako
+
+    <!-- Favicons
+    ============================================= -->
+    <link rel="shortcut icon" sizes="196x196" href="${static_url("images/icons/icon-196x196.png")}">
+    <link rel="apple-touch-icon" href="${static_url("images/icons/touch-icon-iphone.png")}">
+    <link rel="apple-touch-icon" sizes="76x76" href="${static_url("images/icons/touch-icon-ipad.png")}">
+    <link rel="apple-touch-icon" sizes="120x120" href="${static_url("images/icons/touch-icon-iphone-retina.png")}">
+    <link rel="apple-touch-icon" sizes="152x152" href="${static_url("images/icons/touch-icon-ipad-retina.png")}">
