@@ -1,59 +1,186 @@
+## mako
 <%page expression_filter="h"/>
 <%inherit file="main.html" />
 <%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query"/>
 <%!
-from django.utils.translation import ugettext as _
-from django.core.urlresolvers import reverse
-
-from openedx.core.djangolib.markup import HTML, Text
+    from django.utils.translation import ugettext as _
+    from django.core.urlresolvers import reverse
 %>
- 
-    <main id="mbg">
-      <section class="promo-box">
-        <div class="promo-box_wrapper">
-          <div class="promo-box_helper"></div>
-          <div class="promo-box_holder">
-            <span class="promo-box_text">the best theme for education</span>
-            <h1 class="promo-box_heading">Welcome to University!</h1>
-            <a class="theme-btn theme-btn__invert" href="/courses">start learning now</a>
-          </div>
-        </div>
-      </section>
-    </main>
 
-        <div class="content-wrapper" id="content">
-<main id="main" aria-label="Content" tabindex="-1">
-      <section class="theme-courses_wrapper">
-        <h1 class="theme-courses_heading">Our Courses</h1>
-          <section class="theme-courses">
-            <%include file="${courses_list}" />
-          </section>
-      </section>
-</main>
-
-% if show_homepage_promo_video:
-  <section id="video-modal" class="modal home-page-video-modal video-modal">
-    <div class="inner-wrapper">
-      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
-% endif
-
-<%block name="js_extra">
-   <script type="text/javascript">
-      $(window).load(function() {
-         if(getParameterByName('next')) {
-              $('#login').trigger("click");
-         }
-      })
-   </script>
+<%block name="headextra">
+    <link rel="stylesheet" type="text/css" href="${static.url('css/slick.css')}"/>
+    <link rel="stylesheet" type="text/css" href="${static.url('css/owl.carousel.min.css')}"/>
 </%block>
 
-% if show_signup_immediately is not UNDEFINED:
-  ## NOTE: This won't work in production, because anonymous views are cached, so it will
-  ## show either with or without this extra js for 3 minutes at a time.
-<script type="text/javascript">
-  $(window).load(function() {$('#signup_action').trigger("click");});
-</script>
-% endif
+<%block name="js_extra">
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".more-about-btn").removeClass("hidden");
+            if (getParameterByName('next')) {
+                $('#login').trigger("click");
+            }
+        })
+    </script>
+    ##     <%include file="about_site.html" />
+    ##     <%include file="advisory_site.html" />
+##<%include file="partners_site.html" />
+
+    <script type="text/javascript" src="${static.url('js/slick.min.js')}"></script>
+    <script type="text/javascript" src="${static.url('js/owl.carousel.min.js')}"></script>
+
+</%block>
+
+<section class="home">
+    <header class="hero-main hero">
+        <div class="tint-dark">
+            <div class="grid-container grid-manual">
+                <div class="row">
+                    <div class="banner col col-12 sm-col-12 md-col-12 lg-col-12 xl-col-12 text-tint">
+                       <div class="banner-text-wrap">
+                        <div class="banner-text1">
+
+                            <h1>LEARN ANYTIME ANYWHERE</h1>
+
+                        </div>
+                        <div class="banner-text2">
+
+                            <h2>Your Online Learning Space</h2>
+
+                        </div>
+                       </div>
+                        % if show_homepage_promo_video:
+                            <a href="#video-modal" class="btn-neutral btn-large" rel="leanModal">Watch video <i
+                                    class="fa fa-play"></i></a>
+                        % endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="partners-section">
+        <div class="partners-container">
+            <section class="partners-section">
+                <div class="partners-title">
+                    <h3>
+                        <span class="partners-title--big">Our Partners</span>
+                    </h3>
+                </div>
+                <div class="partners">
+                    <div class="owl-carousel">
+
+                        <div class="owl-item" style="width: 216px;">
+                            <li>
+                                <a href="https://www.saps.gov.za/" target="_blank">
+                                    <img src="${static.url('images/saps.jpg')}"
+                                         alt=" South African Police Service (SAPS) Museum">
+                                </a>
+                            </li>
+                        </div>
+                        <div class="owl-item" style="width: 216px;">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img src="${static.url('images/gp-small.jpg')}"
+                                         alt=" GP Tutor">
+                                </a>
+                            </li>
+                        </div>
+                        <div class="owl-item" style="width: 216px;">
+                            <li>
+                                <a href="http://www.botanicalsociety.org.za/" target="_blank">
+                                    <img src="${static.url('images/bsosa.jpg')}"
+                                         alt=" The Botanical Society of South Africa (BotSoc)">
+                                </a>
+                            </li>
+                        </div>
+                        <div class="owl-item" style="width: 216px;">
+                            <li>
+                                <a href="http://www.academia.co.za/" target="_blank">
+                                    <img src="${static.url('images/academia.jpg')}"
+                                         alt=" Academia">
+                                </a>
+                            </li>
+                        </div>
+
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+
+                    $(document).ready(function () {
+                        $(".owl-carousel").owlCarousel({
+                            autoPlay: 3000,
+                            loop: true,
+
+                            items: 4,
+                            itemsDesktop: [1199, 4],
+                            itemsDesktopSmall: [979, 4],
+                            itemsTablet: [768, 3],
+                            itemsMobile: [479, 2],
+                            navigation: true,
+                            navigationText: false,
+                            pagination: false,
+
+                        });
+                    });
+                </script>
+            </section>
+        </div>
+    </section>
+    <div class="grid-container grid-manual">
+        <div class="row">
+            <div class="home-text-one col-12 sm-col-12 md-col-12 lg-col-12 xl-col-12">
+                <h2>Browse through our online courses offered by the best universities, educational Institutions</h2>
+            </div>
+            <div class="home-text-one col-3 sm-col-3 md-col-3 lg-col-3 xl-col-3"></div>
+            <div class="home-text-one col-6 sm-col-6 md-col-6 lg-col-6 xl-col-6">
+                <p>We are building the largest collection of online courses across wide range of topics including academic, Professional & Technical subjects.</p>
+            </div>
+            <div class="home-text-two col-3 sm-col-3 md-col-3 lg-col-3 xl-col-3"></div>
+        </div>
     </div>
+    <div class="fcourse-list">
+            <%include file="${courses_list}" />
+    </div>
+    ##     <section class="about-section">
+    ##         <div class="about-container"></div>
+    ##     </section>
+    ##     <section class="advisory-section">
+    ##         <div class="advisory-container"></div>
+    ##     </section>
+
+    <section class="bottom-banner-section">
+        <div class="grid-manual bottom-banner-container">
+            <div class="bottom-banner-text">
+                <div class="bottom-learn">
+                    <h2>READY TO LEARN?</h2>
+                </div>
+                <div class="bottom-register">
+                    <a class="btn btn-primary" href="/register${login_query()}">REGISTER NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+% if show_homepage_promo_video:
+    <section id="video-modal" class="modal modal-custom custom-video-modal">
+        <div class="inner-wrapper">
+            <iframe title="YouTube Video" width="640" height="360"
+                    src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0"
+                    allowfullscreen></iframe>
+        </div>
+    </section>
+% endif
+
+% if show_signup_immediately is not UNDEFINED:
+## NOTE: This won't work in production, because anonymous views are cached, so it will
+## show either with or without this extra js for 3 minutes at a time.as
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#signup_action').trigger("click");
+        });
+    </script>
+% endif
