@@ -134,23 +134,10 @@ from pipeline_mako import render_require_js_path_overrides
         <%include file="${static.get_template_path('header.html')}" args="online_help_token=online_help_token" />
     % endif
 
-    <main>
-      <section class="promo-box">
-        <div class="promo-box_wrapper">
-          <div class="promo-box_helper"></div>
-          <div class="promo-box_holder">
-            <span class="promo-box_text">the best theme for education</span>
-            <h1 class="promo-box_heading">Welcome to University!</h1>
-            <a class="theme-btn theme-btn__invert" href="/courses">start learning now</a>
-          </div>
-        </div>
-      </section>
-    </main>
 
-    <div class="content-wrapper" id="content">
       ${self.body()}
       <%block name="bodyextra"/>
-    </div>
+
 
     % if not disable_footer:
         <%include file="${static.get_template_path('footer.html')}" />
