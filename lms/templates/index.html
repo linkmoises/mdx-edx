@@ -3,45 +3,30 @@
 <%namespace name='static' file='static_content.html'/>
 <%!
 from django.utils.translation import ugettext as _
-from django.urls import reverse
+from django.core.urlresolvers import reverse
 
 from openedx.core.djangolib.markup import HTML, Text
 %>
 
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="home">
-      <header>
-
-        <div class="outer-wrapper">
-          <div class="title">
-            <div class="heading-group">
-              % if homepage_overlay_html:
-                ${homepage_overlay_html | n, decode.utf8}
-              % else:
-                <%include file="index_overlay.html" />
-              % endif
-            </div>
-            % if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-              <div class="course-search">
-                <form method="get" action="/courses">
-                  <label><span class="sr">${_("Search for a course")}</span>
-                    <input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-                  </label>
-                  <button class="search-button" type="submit">
-                    <span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-                  </button>
-                </form>
-              </div>
-            % endif
-
+      <section class="promo-box">
+        <div class="promo-box_wrapper">
+          <div class="promo-box_helper"></div>
+          <div class="promo-box_holder">
+            <span class="promo-box_text">the best theme for education</span>
+            <h1 class="promo-box_heading">Welcome to University!</h1>
+            <a class="theme-btn theme-btn__invert" href="/courses">start learning now</a>
           </div>
-
-          <%include file="index_promo_video.html" />
         </div>
+      </section>
 
-      </header>
-      <%include file="${courses_list}" />
-
+      <section class="theme-courses_wrapper">
+        <h1 class="theme-courses_heading">Our Courses</h1>
+          <section class="theme-courses">
+            <%include file="${courses_list}" />
+          </section>
+      </section>
     </section>
 </main>
 
@@ -69,9 +54,4 @@ from openedx.core.djangolib.markup import HTML, Text
 <script type="text/javascript">
   $(window).load(function() {$('#signup_action').trigger("click");});
 </script>
-% endif
-% if not uses_bootstrap:
-  <!-- McDaniel Oct-2018: add the Bootstrap javascript library, unless it's already included from webpack -->
-  ## xss-lint: disable=mako-invalid-js-filter
-  <script type="text/javascript" src="${static.url('common/js/vendor/bootstrap.bundle.js')}"></script>
 % endif
