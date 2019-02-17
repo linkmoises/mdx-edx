@@ -5,7 +5,7 @@
 .vitrina .force-full-screen {
 	background-image: url('../mdx-edx/images/landing.jpg');
 	background-position: 50% 0;
-	height: 80%;
+	height: 600px;
 }
 
 @media (min-width: 992px) {
@@ -64,4 +64,48 @@
 
 @media (min-width: 1200px) {
 	.container { max-width: 1170px; }
+}
+
+/* ----------------------------------------------------------------
+	Animaciones
+-----------------------------------------------------------------*/
+
+.dark .slider-caption h2 {
+    color: #EEE;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+
+.slider-caption h2 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.animated {
+    opacity: 1;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.slider-caption p {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+@media (min-width: 576px) {
+	.d-sm-block {
+	    display: block !important;
+	}
 }
