@@ -26,6 +26,11 @@
 	}
 }
 
+.vitrina .force-full-screen {
+	background-image: url('../mdx-edx/images/landing.jpg');
+	background-position: 50% 0;
+}
+
 @media (min-width: 992px) {
 	.global-header .nav-links .secondary .nav-item {
 		padding: 0;
