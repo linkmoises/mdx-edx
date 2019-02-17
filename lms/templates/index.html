@@ -8,18 +8,18 @@ from django.urls import reverse
 from openedx.core.djangolib.markup import HTML, Text
 %>
 
-<main id="main" aria-label="Content" tabindex="-1">
-    <section class="home">
-
+<section id="content" style="margin-bottom: 0px;">
+  <div class="content-wrap">
+    <div class="container clearfix">
       <div class="fancy-title title-dotted-border title-center">
         <h1>Cursos <span>próximos</span> a iniciar</h1>
         <p><span>Educación médica continua de calidad a tu alcance, 100% Online, Sin Horarios ¡Inscríbete ahora!</span></p>
       </div>
-
+      <div class="clear"></div>
       <%include file="${courses_list}" />
-
-    </section>
-</main>
+    </div>
+  </div>
+</section>
 
 % if show_homepage_promo_video:
   <section id="video-modal" class="modal home-page-video-modal video-modal">
