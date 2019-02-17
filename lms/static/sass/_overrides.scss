@@ -25,3 +25,9 @@
 		}
 	}
 }
+
+@media (min-width: 992px) {
+	.global-header .nav-links .secondary .nav-item {
+		padding: 0;
+	}	
+}
