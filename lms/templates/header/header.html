@@ -57,11 +57,6 @@ from openedx.core.djangoapps.lang_pref.api import header_language_selector_is_en
     <div class="force-full-screen full-screen dark parallax">
         <div class="container clearfix">
             <div class="slider-caption slider-caption-center">
-% if homepage_overlay_html:
-${homepage_overlay_html | n, decode.utf8}
-% else:
-<%include file="index_overlay.html" />
-% endif
                 <h2 data-animate="fadeInDown">¡Bienvenido!</h2>
                 <p class="d-none d-sm-block" data-animate="fadeInUp" data-delay="400">DocenciaMD es una plataforma MOOC desarrollada por profesionales de la salud para profesionales de la salud para mantenerte siempre actualizado.</p>
                 <a data-animate="fadeInUp" data-delay="600" href="#" class="button button-3d button-large button-rounded button-green nobottommargin d-none d-md-inline-block" style="margin-top: 30px;">Ver catálogo de cursos</a>
