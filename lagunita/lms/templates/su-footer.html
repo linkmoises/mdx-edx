@@ -2,44 +2,43 @@
 
 <%namespace name='static' file='/static_content.html'/>
 
-<div id="su-footer">
-  <div class="su-container">
-    <div class="su-row">
-      <div id="su-footer-logo" class="span2">
-        <a href="https://www.stanford.edu">
-          <img
-            src="${static.url('images/footer-stanford-logo.png')}"
-            alt="Stanford University"
-            width="105"
-            height="49"
-          />
-        </a>
-      </div>
-      <div id="su-footer-text" class="span10">
-        <ul id="global-links">
-          <li class="home"><a href="https://www.stanford.edu">Stanford Home</a></li>
-          <li class="maps alt"><a href="https://visit.stanford.edu/plan/">Maps &amp; Directions</a></li>
-          <li class="search-stanford"><a href="https://www.stanford.edu/search/">Search Stanford</a></li>
-          <li class="emergency alt"><a href="https://emergency.stanford.edu">Emergency Info</a></li>
-        </ul>
-        <ul id="policy-links">
-          <li class="alt"><a href="https://www.stanford.edu/site/terms/" title="Terms of use for sites">Terms of Use</a></li>
-          <li class="alt"><a href="https://www.stanford.edu/site/privacy/" title="Privacy and cookie policy">Privacy</a></li>
-          <li class="copyright alt"><a href="https://uit.stanford.edu/security/copyright-infringement" title="Report alleged copyright infringement">Copyright</a></li>
-          <li class="alt"><a href="https://adminguide.stanford.edu/chapter-1/subchapter-5/policy-1-5-4" title="Ownership and use of Stanford trademarks and images">Trademarks</a></li>
-          <li class="alt"><a href="http://exploredegrees.stanford.edu/nonacademicregulations/nondiscrimination/" title="Non-discrimination policy">Non-Discrimination</a></li>
-          <li class="alt"><a href="https://www.stanford.edu/site/accessibility" title="Report web accessibility issues">Accessibility</a></li>
-        </ul>
-      </div>
-      <div class="clear"></div>
-      <p class="copyright vcard">
-        <span>&copy;</span>
-        <span class="fn org">Stanford University</span>.
-        <span class="adr">
-          <span class="locality">Stanford</span>,
-          <span class="region">California</span> <span class="postal-code">94305</span>.
+<div class="wrapper-footer">
+  <footer class="container">
+    <div class="row">
+      <nav>
+        <div class="col-md-2">
+          <a href="/">
+            <img class="gymnasium-logo" src="${static.url('images/logo.png')}" alt="Aquent Gymnasium">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <ol class="list-inline text-center footer-link-list">
+            <li><a href="https://medium.com/gymnasium" target="_blank">Blog</a></li>
+            <li><a href="/jobs">Jobs</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/support">Support</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/csr-policy">Corporate Social Responsibility</a></li>
+            <li id="headway-changelog-anchor">
+              <a href="https://headwayapp.co/the-gymnasium-changelog" target="_blank">Changelog</a>
+            <span id="HW_badge_cont" class="HW_visible"><span id="HW_badge" data-count-unseen="3" class="HW_visible">3</span></span></li>
+          </ol>
+          <div class="copyright">© 2019 Aquent Gymnasium</div>
+        </div>
+      </nav>
+
+      <div class="built-on col-md-2 text-center">
+        <span>
+          <a href="http://openedx.org" target="_blank">
+            <img src="https://files.edx.org/openedx-logos/edx-openedx-logo-tag-light.png" width="150" height="50" alt="Powered by Open edX">
+          </a>
+
         </span>
-      </p>
+      </div>
     </div>
-  </div>
+    <div class="row">
+
+    </div>
+  </footer>
 </div>
