@@ -26,14 +26,14 @@ from six import text_type
 		% if allows_login:
 		% if can_discover_courses:
 			<div class="mobile-nav-item hidden-mobile nav-item">
-				<a class="md-btn verde" href="/courses">${_('Explore courses')}</a>
+				<a class="md-btn" href="/courses">${_('Explore courses')}</a>
 			</div>
 		% endif
 		% endif
 		% if allows_login:
 		% if restrict_enroll_for_course:
 			<div class="mobile-nav-item hidden-mobile nav-item">
-				<a class="md-btn verde" href="${reverse('course-specific-register', args=[text_type(course.id)])}">${_("Register")}</a>
+				<a class="md-btn" href="${reverse('course-specific-register', args=[text_type(course.id)])}">${_("Register")}</a>
 			</div>
 			<div class="mobile-nav-item hidden-mobile nav-item">
 				<a class="md-btn azul" href="${reverse('course-specific-login', args=[text_type(course.id)])}${login_query()}">${_("Sign in")}</a>
@@ -41,7 +41,7 @@ from six import text_type
 		% else:
 			% if allow_public_account_creation:
 			<div class="mobile-nav-item hidden-mobile nav-item">
-				<a class="md-btn verde" href="/register${login_query()}">${_("Register")}</a>
+				<a class="md-btn" href="/register${login_query()}">${_("Register")}</a>
 			</div>
 			% endif
 			<div class="mobile-nav-item hidden-mobile nav-item">

@@ -8,6 +8,10 @@ header img.logo {
 
 @media screen and (min-width: 992px) {
 
+	.global-header .nav-links .secondary {
+		margin: 10px 40px 0 0 !important;
+	}
+
 	.md-btn::-moz-focus-inner{
 		border: 0;
 		padding: 0;
@@ -17,15 +21,15 @@ header img.logo {
 		display: inline-block;
 		*display: inline;
 		zoom: 1;
-		padding: 6px 20px;
+		padding: 5px 10px;
 		margin: 0;
 		cursor: pointer;
 		border: 1px solid #bbb;
 		overflow: visible;
-		font: bold 13px arial, helvetica, sans-serif;
+		font: bold 13px arial, helvetica, sans-serif !important;
 		text-decoration: none;
 		white-space: nowrap;
-		color: #555;
+		color: #ccc !important;
 		
 		background-color: #ddd;
 		background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
@@ -59,7 +63,7 @@ header img.logo {
 
 	.md-btn:hover{
 		background-color: #eee;
-		color: #555;
+		color: #ccc;
 	}
 
 	.md-btn:active{
@@ -102,9 +106,9 @@ header img.logo {
 		top: 2px;
 	}
 
-	/* Colored md-btns styles */
+	/* Colorojo md-btns styles */
 
-	.md-btn.verde, .md-btn.red, .md-btn.azul {
+	.md-btn.verde, .md-btn.rojo, .md-btn.azul {
 		color: #fff;
 		text-shadow: 0 1px 0 rgba(0,0,0,.2);
 		
@@ -133,16 +137,16 @@ header img.logo {
 
 	/* */
 
-	.md-btn.red{
+	.md-btn.rojo{
 		background-color: #ca3535;
 		border-color: #c43c35;
 	}
 
-	.md-btn.red:hover{
+	.md-btn.rojo:hover{
 		background-color: #ee5f5b;
 	}
 
-	.md-btn.red:active{
+	.md-btn.rojo:active{
 		background: #c43c35;
 	}
 
@@ -169,7 +173,7 @@ header img.logo {
 		color: #D2FFD2;
 	}
 
-	.red[disabled], .red[disabled]:hover, .red[disabled]:active{
+	.rojo[disabled], .rojo[disabled]:hover, .rojo[disabled]:active{
 		border-color: #C43C35;
 		background: #C43C35;
 		color: #FFD3D3;
