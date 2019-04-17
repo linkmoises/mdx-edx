@@ -9,7 +9,8 @@ from openedx.core.djangolib.markup import HTML, Text
 %>
 
 <section class="hero is-primary is-medium">
-	<div class="hero-body">
+	<div class="hero-body parallax-window" data-parallax="scroll" data-image-src="${static.url("images/home-page-2.jpg")}">
+
 		<div class="container">
 			<h1 class="title">Medium title</h1>
 			<h2 class="subtitle">Medium subtitle</h2>
