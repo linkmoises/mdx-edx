@@ -3,6 +3,7 @@
 <%namespace name='static' file='/static_content.html'/>
 
 <section class="courses-container">
+	<div class="container is-widescreen md-nopadding">
 	<section class="highlighted-courses">
 
 % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
@@ -25,4 +26,5 @@
 % endif
 
 	</section>
+	</div>
 </section>
