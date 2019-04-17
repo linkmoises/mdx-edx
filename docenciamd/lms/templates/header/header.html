@@ -36,21 +36,51 @@ from branding import api as branding_api
 			props={}
 		)}
 	% endif
-	<div class="main-header">
-		<%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
-		<div class="hamburger-menu" role="button" aria-label=${_("Options Menu")} aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
-			<span class="line"></span>
-			<span class="line"></span>
-			<span class="line"></span>
-			<span class="line"></span>
+	<nav class="navbar" role="navigation" aria-label="main navigation">
+		<div class="navbar-brand">
+			<%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
+
+			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMD">
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+				<span aria-hidden="true"></span>
+			</a>
 		</div>
-		% if user.is_authenticated:
-			<%include file="navbar-authenticated.html" args="online_help_token=online_help_token"/>
-		% else:
-			<%include file="navbar-not-authenticated.html" args="online_help_token=online_help_token"/>
-		% endif
-	</div>
-	<div class="mobile-menu hidden" aria-label=${_("More Options")} role="menu" id="mobile-menu"></div>
+
+		<div id="navbarMD" class="navbar-menu">
+			<div class="navbar-start">
+				<a class="navbar-item">
+					Inicio
+				</a>
+
+				<a class="navbar-item">
+					Cursos
+				</a>
+
+				<a class="navbar-item">
+					Tienda
+				</a>
+
+				<a class="navbar-item">
+					Blog
+				</a>
+
+			</div>
+
+			<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons">
+						<a class="button is-primary">
+							<strong>Registrarse</strong>
+						</a>
+						<a class="button is-light">
+							Iniciar sesión
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
 </header>
 
 % if course:

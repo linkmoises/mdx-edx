@@ -13,10 +13,8 @@ from openedx.core.djangoapps.site_configuration import helpers as configuration_
 from branding import api as branding_api
 %>
 
-<h1 class="header-logo">
-	<a href="${branding_api.get_home_url()}">
-		<%block name="navigation_logo">
-		<img  class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="Inicio"/>
-		</%block>
-	</a>
-</h1>
+			<a class="navbar-item" href="${branding_api.get_home_url()}">
+				<%block name="navigation_logo">
+				<img class="logo" src="${branding_api.get_logo_url(is_secure)}" alt="Inicio" width="186" height="24"/>
+				</%block>
+			</a>
