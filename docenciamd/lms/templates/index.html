@@ -13,25 +13,18 @@ from openedx.core.djangolib.markup import HTML, Text
 		<div class="container">
 			<h1 class="title">Medium title</h1>
 			<h2 class="subtitle">Medium subtitle</h2>
+			<div class="course-search">
+				<form method="get" action="/courses">
+					<label><span class="sr">${_("Search for a course")}</span>
+						<input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+					</label>
+					<button class="search-button" type="submit">
+						<span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+					</button>
+				</form>
+			</div>
 		</div>
 	</div>
-</section>
-
-<section class="hero is-medium has-carousel">
-	<div id="carousel-demo" class="hero-carousel">
-		<div class="item-1">
-			<!-- Slide Content -->
-		</div>
-		<div class="item-2">
-			<!-- Slide Content -->
-		</div>
-		<div class="item-3">
-			<!-- Slide Content -->
-		</div>
-	</div>
-	<div class="hero-head"></div>
-	<div class="hero-body"></div>
-	<div class="hero-foot"></div>
 </section>
 
 <main id="main" aria-label="Content" tabindex="-1">
@@ -47,21 +40,11 @@ from openedx.core.djangolib.markup import HTML, Text
 							% endif
 						</div>
 						% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-							<div class="course-search">
-								<form method="get" action="/courses">
-									<label><span class="sr">${_("Search for a course")}</span>
-										<input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-									</label>
-									<button class="search-button" type="submit">
-										<span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-									</button>
-								</form>
-							</div>
+						
 						% endif
 
 					</div>
 
-					<%include file="index_promo_video.html" />
 				</div>
 
 			</header>
