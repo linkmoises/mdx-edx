@@ -37,31 +37,33 @@ from branding import api as branding_api
 		)}
 	% endif
 	<nav class="navbar" role="navigation" aria-label="main navigation">
-		<div class="navbar-brand">
-			<%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
+		<div class="container is-fluid">
+			<div class="navbar-brand">
+				<%include file="navbar-logo-header.html" args="online_help_token=online_help_token"/>
 
-			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMD">
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-				<span aria-hidden="true"></span>
-			</a>
-		</div>
-
-		<div id="navbarMD" class="navbar-menu">
-			<div class="navbar-start">
-				<a class="navbar-item"><strong>Inicio</strong></a>
-
-				<a class="navbar-item"><strong>Cursos</strong></a>
-
-				<a class="navbar-item"><strong>Tienda</strong></a>
-
-				<a class="navbar-item"><strong>Blog</strong></a>
-
+				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMD">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
 			</div>
 
-			<div class="navbar-end">
-				<a class="navbar-item md-resaltado"><strong>Registrarse</strong></a>
-				<a class="navbar-item">Iniciar sesión</a>
+			<div id="navbarMD" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item"><strong>Inicio</strong></a>
+
+					<a class="navbar-item"><strong>Cursos</strong></a>
+
+					<a class="navbar-item"><strong>Tienda</strong></a>
+
+					<a class="navbar-item"><strong>Blog</strong></a>
+
+				</div>
+
+				<div class="navbar-end">
+					<a class="navbar-item md-resaltado"><strong>Registrarse</strong></a>
+					<a class="navbar-item">Iniciar sesión</a>
+				</div>
 			</div>
 		</div>
 	</nav>
