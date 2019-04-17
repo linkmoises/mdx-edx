@@ -8,5 +8,13 @@ header img.logo {
 }
 
 .md-resaltado {
-	backgroud: #E8C39E;
+	background: #0075b4 !important;
+}
+
+.md-resaltado a {
+	color: #ffffff !important; 
+}
+
+a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+	background-color: #add8e6 !important;	
 }
