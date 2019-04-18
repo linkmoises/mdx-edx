@@ -1,13 +1,13 @@
-.hero-body {
+#banner .hero-body {
 	background: url('https://storage.googleapis.com/docenciamd/home-page.jpg') no-repeat;
 }
 
-@media (min-width: 768px) {
+.content-wrapper {
+	margin: 0 !important;
+	padding: 0 !important;
+}
 
-	.content-wrapper {
-		margin: 0 !important;
-		padding: 0 !important;
-	}
+@media (min-width: 768px) {
 
 	.global-header .nav-links .secondary .nav-item {
 		padding: 0;
