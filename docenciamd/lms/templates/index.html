@@ -14,24 +14,24 @@ from openedx.core.djangolib.markup import HTML, Text
 			<img src="${static.url("images/slogan.png")}" alt="Aprende, Innova, Cura">
 		</div>
 	</div>
-
-
 </section>
 
-<section class="md-busqueda">
-	<div class="heading-group">
-	% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-		<div class="course-search">
-			<form method="get" action="/courses">
-				<label><span class="sr">${_("Search for a course")}</span>
-					<input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
-				</label>
-				<button class="search-button" type="submit">
-					<span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
-				</button>
-			</form>
+<section class="hero is-light">
+	<div class="hero-body">
+		<div class="container">
+		% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
+			<div class="course-search">
+				<form method="get" action="/courses">
+					<label><span class="sr">${_("Search for a course")}</span>
+						<input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input>
+					</label>
+					<button class="search-button" type="submit">
+						<span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
+					</button>
+				</form>
+			</div>
+		% endif	
 		</div>
-	% endif	
 	</div>
 </section>
 
