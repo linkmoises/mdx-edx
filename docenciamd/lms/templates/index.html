@@ -11,7 +11,9 @@ from openedx.core.djangolib.markup import HTML, Text
 <section class="hero is-medium">
 	<div class="hero-body">
 		<div class="container">
-			<h1 class="title">Medium title</h1>
+			<h1 class="title">
+				<img src="${static.url("images/slogan.png")}" alt="Aprende, Innova, Cura">
+			</h1>
 			<h2 class="subtitle">Medium subtitle</h2>
 			% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
 			<div class="course-search">
@@ -27,7 +29,8 @@ from openedx.core.djangolib.markup import HTML, Text
 			% endif
 		</div>
 	</div>
-	
+
+
 </section>
 
 <main id="main" aria-label="Content" tabindex="-1">
