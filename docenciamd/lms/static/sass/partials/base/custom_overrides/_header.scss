@@ -27,7 +27,7 @@ a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.i
 
 #md-search form{
 position: relative;
-top: 50%;
+top: 40%;
 left: 50%;
 transform: translate(-50%,-50%);
 transition: all 1s;
@@ -64,7 +64,7 @@ position: absolute;
 top: 0;
 right: 0;
 border-radius: 50%;
-color: #07051a;
+color: #0075b4;
 text-align: center;
 font-size: 1.2em;
 transition: all 1s;
@@ -80,6 +80,6 @@ display: block;
 }
 
 #md-search form:hover .fa{
-background: #07051a;
+background: #0075b4;
 color: white;
 }
