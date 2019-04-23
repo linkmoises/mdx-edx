@@ -51,7 +51,7 @@ from branding import api as branding_api
 			<div id="navbarMD" class="navbar-menu">
 				<div class="navbar-start">
 					% if settings.FEATURES.get('ENABLE_COURSE_DISCOVERY'):
-					<div id="md-search" class="is-hidden-touch navbar-item">
+					<div id="md-search" class="is-hidden-touch">
 						<form method="get" action="/courses">
 							<label><span class="sr">${_("Search for a course")}</span><input class="search-input" name="search_query" type="text" placeholder="${_("Search for a course")}"></input></label>
 							<span class="icon fa fa-search" aria-hidden="true"></span><span class="sr">${_("Search")}</span>
