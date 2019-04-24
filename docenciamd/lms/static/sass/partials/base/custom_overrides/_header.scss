@@ -7,8 +7,12 @@ header img.logo {
 	padding-bottom: 0 !important;
 }
 
-.md-resaltado {
+.md-signup {
 	background: #0075b4 !important;
+}
+
+.md-signin {
+	background: #2db24b !important;
 }
 
 .md-nopadding {
@@ -16,7 +20,7 @@ header img.logo {
 	padding-bottom: 0;
 }
 
-a.md-resaltado {
+a.md-signup, a.md-signin {
 	color: #ffffff !important; 
 }
 
