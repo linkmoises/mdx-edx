@@ -20,13 +20,7 @@ from six import text_type
 	allow_public_account_creation = static.get_value('ALLOW_PUBLIC_ACCOUNT_CREATION', settings.FEATURES.get('ALLOW_PUBLIC_ACCOUNT_CREATION'))
 %>
 
-		% if allows_login:
-			% if restrict_enroll_for_course:
-					<a class="navbar-item md-resaltado" href="${reverse('course-specific-register', args=[text_type(course.id)])}"><strong>Registrarse</strong></a>
-					<a class="navbar-item" href="${reverse('course-specific-login', args=[text_type(course.id)])}${login_query()}">Iniciar sesión</a>
-			% else:
-			% if allow_public_account_creation:
+% if allow_public_account_creation:
 					<a class="navbar-item md-resaltado" href="/register${login_query()}"><strong>Registrarse</strong></a>
 					<a class="navbar-item" href="/login${login_query()}">Iniciar sesión</a>
-			% endif
-		% endif
+% endif
